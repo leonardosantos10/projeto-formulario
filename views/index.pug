@@ -1,0 +1,20 @@
+extends app.pug
+block titulo 
+      title Lista de Clientes
+block conteudo
+    h1 Listas de Clientes
+    table.table
+      thead
+        tr
+          th(scope='col') ID
+          th(scope='col') Nome
+          th(scope='col') Email
+          th(scope='col') Ações
+      tbody
+        for client, indice in clients
+          tr
+            th(scope='row') #{client.id}
+            td 
+                a(href=`/clients/${client.id}`) #{client.name}
+            td #{client.email}
+
